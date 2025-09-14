@@ -120,6 +120,15 @@ public class Song implements Comparable {
         }
     }
 
+    //
+    public static class CmpArtist extends CmpCnt implements Comparator<Song> {
+        @Override
+        public int compare(Song s1, Song s2) {
+            cmpCnt++; // Increment the comparison counter
+            return s1.getArtist().compareToIgnoreCase(s2.getArtist());
+        }
+    }
+
 
     /**
      * testing method to unit test this class
